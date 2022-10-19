@@ -122,3 +122,45 @@ async function displayFiveDayForecast() {
       }
       $("#forecastContainer").html(forecastSec);
     }
+
+    // local storage functions
+initCityList();
+initWeather();
+
+
+// This function pulls the city list array from local storage
+function initCityList() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+    
+    if (storedCities !== null) {
+        cityList = storedCities;
+    }
+    
+    renderCities();
+    }
+
+// pulls the local storage search to display inside container
+function initWeather() {
+    var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
+
+    if (storedWeather !== null) {
+        cityname = storedWeather;
+        displayWeather();
+        displayFiveDayForecast();
+    }
+}
+
+// Saves the city array to local storage
+function storeCityArray() {
+    localStorage.setItem("cities", JSON.stringify(cityList));
+ }
+
+// pass the city from the history list to display
+function historyDisplayWeather(){
+    cityname = $(this).attr("data-name");
+    displayWeather();
+    console.log(cityname);
+    displayFiveDayForecast();
+}
+
+$(document).on("click", ".city", historyDisplayWeather);
