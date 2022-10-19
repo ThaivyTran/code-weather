@@ -1,19 +1,46 @@
 <!DOCTYPE html>
-<html>
- <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/d6ffe85331.js" crossorigin="anonymous"></script>
     <title>code-weather</title>
-    <link href="assets/style.css" rel="stylesheet" />
- </head>
-
- <h1>Weather Dashboard</h1>
- 
- <section class="search-container">
-    <h2>Search for a City:</h2>
-    <input form="search"><button class="fa-solid fa-magnifying-glass"></button>
-</section>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d6ffe85331.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head> 
+<body>
+    
+    <section class="jumbotron jumbotron-fluid">
+        <section class="container">
+            <h1 class="display-5 text-center">Weather Dashboard</h1>
+        </section>
+    </section>
+    
+    <section class="container-fluid">
+        <section class="row">
+            <section class="col-3 search-column">
+                <h4>Search for a city:</h4>
+                <section class="input-group mb-3">
+                    <input type="text" class="form" id="cityInput" placeholder="enter city name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <section class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="citySearchBtn">
+                           <i class="fa-solid fa-magnifying-glass"></i></button>
+                        </section>
+                    </section>
+                    <section class="list-group" id="cityList">
+                      </section>                    
+                </section>
+                <section class="col-9">
+                    <section class="card" style="width: 100%;" id="weatherContainer"></section>
+                      <section id="forecastContainer"></section>
+                </section>
+        </section>
+    </section>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
+    <script src="assets/script.js"></script>
+</body>
 </html>
