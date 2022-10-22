@@ -36,7 +36,7 @@ $("#citySearchBtn").on("click", function(event){
     displayFiveDayForecast();
 });
 
-// even handler for user to hit enter
+// event handler for user to hit search
 $("#cityInput").keypress(function(e){
     if(e.which == 13){
         $("#citySearchBtn").click();
